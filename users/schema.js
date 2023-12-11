@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import songSchema from "../songs/schema";
 
 const userSchema = new mongoose.Schema(
   {
