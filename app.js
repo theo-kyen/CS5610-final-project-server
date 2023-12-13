@@ -1,3 +1,4 @@
+import "dotenv/config";
 import express from "express";
 import session from "express-session";
 import cors from "cors";
@@ -12,7 +13,7 @@ const app = express();
 
 const corsOptions = {
   credentials: true,
-  origin: process.env.FRONTEND_URL,
+  origin: true,
 };
 app.use(cors(corsOptions));
 
@@ -35,4 +36,4 @@ app.use(express.json());
 SearchRoutes(app);
 UserRoutes(app);
 
-app.listen(4000, () => console.log("Listening at 4000"));
+app.listen(process.env.PORT || 4000);
